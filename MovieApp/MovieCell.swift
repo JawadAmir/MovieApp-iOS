@@ -68,7 +68,7 @@ class MovieCell: UICollectionViewCell {
         if(movie.poster_path  == "" || movie.poster_path == "-1"){
             
         } else{
-            imageMovie.kf.setImage(with: URL(string: "\(PICTURE_BASE_URL)\(movie.poster_path)"))
+            imageMovie.kf.setImage(with: URL(string: "\(Constants.PICTURE_BASE_URL)\(movie.poster_path)"))
         }
     }
     

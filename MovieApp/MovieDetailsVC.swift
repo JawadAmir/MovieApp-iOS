@@ -38,7 +38,7 @@ class MovieDetailsVC: UIViewController {
         if(movie.poster_path  == "" || movie.poster_path == "-1"){
             
         } else{
-            imageMovie.kf.setImage(with: URL(string: "\(PICTURE_BASE_URL)\(movie.poster_path)"))
+            imageMovie.kf.setImage(with: URL(string: "\(Constants.PICTURE_BASE_URL)\(movie.poster_path)"))
         }
         
         getDetails()
@@ -61,7 +61,7 @@ extension MovieDetailsVC {
     @objc func getDetails(){
         
         let parametres = [ "api_key": "c9856d0cb57c3f14bf75bdc6c063b8f3"] as [String : Any]
-        Alamofire.request("\(GET_DETAILS_MOVIES_URL)/\(movie.id)", method: .get, parameters: parametres, encoding: URLEncoding(), headers: HEADERS).validate().responseJSON { (response) in
+        Alamofire.request("\(Constants.GET_DETAILS_MOVIES_URL)/\(movie.id)", method: .get, parameters: parametres, encoding: URLEncoding(), headers: Constants.HEADERS).validate().responseJSON { (response) in
             
             if response.result.error != nil {
                 print(response)
