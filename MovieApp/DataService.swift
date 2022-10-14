@@ -20,7 +20,7 @@ class DataService {
     func getMovies (completion : @escaping (_ Success: String) -> ()) {
         
         let parametres = [ "api_key": "c9856d0cb57c3f14bf75bdc6c063b8f3"] as [String : Any]
-        Alamofire.request(Constants.GET_MOVIES_URL, method: .get, parameters: parametres, encoding: URLEncoding(), headers: Constants.HEADERS).validate().responseJSON { (response) in
+        Alamofire.request(GET_MOVIES_URL, method: .get, parameters: parametres, encoding: URLEncoding(), headers: HEADERS).validate().responseJSON { (response) in
             
             if response.result.error != nil {
                 print(response)
